@@ -1,0 +1,17 @@
+CREATE EXTERNAL TABLE devices.mani_STB_RESOLUTION_staging(
+`table` string ,
+`op_type` string ,
+`op_ts` timestamp ,
+`current_ts` timestamp ,
+`pos` string ,
+`before` struct <STB_DEVICE_SERIAL_NUMBER:string,STB_RESOLUTION_STATUS:bigint,STB_RESOLUTION_LATEST_TIMESTAMP:timestamp,STB_RESOLUTION_STATUS_TIMESTAMP:timestamp,JDAP_TS:timestamp>,
+`after` struct <STB_DEVICE_SERIAL_NUMBER:string,STB_RESOLUTION_STATUS:bigint,STB_RESOLUTION_LATEST_TIMESTAMP:timestamp,STB_RESOLUTION_STATUS_TIMESTAMP:timestamp,JDAP_TS:timestamp>
+)
+ROW FORMAT SERDE
+'org.apache.hadoop.hive.serde2.JsonSerDe'
+LOCATION
+'/warehouse/tablespace/external/hive/devices.db/mani_gg_parivartan/mani_STB_RESOLUTION_staging/'
+TBLPROPERTIES
+(
+'external.table.purge'='true'
+);
