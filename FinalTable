@@ -1,0 +1,21 @@
+CREATE EXTERNAL TABLE network.mani_T_STB_RESOLUTION_EVENTS_po (
+`table` string,
+`op_type` string,
+op_ts timestamp,
+op_ts_ist timestamp,
+current_ts timestamp,
+pos string,
+stb_device_serial_number string,
+stb_resolution_status string,
+stb_resolution_latest_timestamp timestamp,
+stb_resolution_status_timestamp timestamp,
+jdap_ts timestamp,
+jbdl_ts timestamp
+)
+partitioned by (partition_date date)
+LOCATION
+'/warehouse/tablespace/external/hive/network.db/mani_gg_parivartan/mani_STB_RESOLUTION_po/'
+TBLPROPERTIES
+(
+'external.table.purge'='true'
+);
