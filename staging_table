@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE devices.mani_STB_RESOLUTION_staging(
+CREATE EXTERNAL TABLE network.mani_STB_RESOLUTION_staging(
 `table` string ,
 `op_type` string ,
 `op_ts` timestamp ,
@@ -10,7 +10,7 @@ CREATE EXTERNAL TABLE devices.mani_STB_RESOLUTION_staging(
 ROW FORMAT SERDE
 'org.apache.hadoop.hive.serde2.JsonSerDe'
 LOCATION
-'/warehouse/tablespace/external/hive/devices.db/mani_gg_parivartan/mani_STB_RESOLUTION_staging/'
+'/warehouse/tablespace/external/hive/network.db/mani_gg_parivartan/mani_STB_RESOLUTION_staging/'
 TBLPROPERTIES
 (
 'external.table.purge'='true'
